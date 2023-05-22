@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %} Главная страница {% endblock title %}
+
+{% block content %}
+<div class="p-5 pb-mb-4 text-center">
+  <h3 class="display-8 fw-bold">Программная система для расчёта параметров развития пожара на производственном объекте в Тульской области</h3>
+</div>
+
+<div class="pricing-header p-4 pb-md-4 mx-auto text-center">
+  <div class="text-center">
+    <img src="{% static 'img/MCHS.png' %}" width="200" height="250" class="rounded" alt="" />
+  </div>
+</div>
+
+<div class="pricing-header p-5 pb-md-4 text-center">
+  <div>
+    <h3 class="display-8 fw-bold">С помощью данного онлайн ресурса сотрудники главного управления МЧС России по Тульской области могут выполнять расчёты параметров развития пожара на производственном объекте</h3>
+    <div class="p-3 pb-mb-4 text-center"></div>
+    <div class="col-lg-9 mx-auto">
+      <p class="lead mb-4"><b> Перед началом выполнения расчёта параметров распространения пожара, необходимо подготовить данные о текущем пожаре, такие как: время с момента начала пожара и тип объекта, на котором начался пожар. </b></p>
+      <p class="lead mb-4"><b> Для расчёта параметров перейдите на страницу расчётов, выберите формулу для расчёта параметров развития пожара и введите время с момента начала пожара, введите угол распространения пожара (только для угловой формулы) и выберите тип объекта, на котором начался пожар. </b></p>
+      <p class="lead mb-4"><b> Результаты расчёта будут предоставлены после нажатия кнопки "Рассчитать" на отдельной странице, подготовленой для печати. </b></p>
+      <div class="p-3 pb-mb-4 text-center"></div>
+      <div class="pricing-header p-4 pb-md-4 mx-auto text-center">
+        <div class="text-center">
+          <img src="{% static 'img/1234.jpg' %}" width="700" height="300" class="rounded" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  {% for calc in calculations %}
+    <div> <!-- Обернём каждую запись в тег div -->
+      <div> <!-- Текст обернём в отдельный вложенный div -->
+        <p><b>Название пожара: {{ calc.name }}</b></p></li>
+        <ul>
+          <li><p>Время с момента начала пожара: {{ calc.time }}</p></li>
+          <li><p>Угол пожара: {{ calc.corner }}</p></li>
+          <li><p>Формула расчёта пожара: {% if calc.corner > 0  %}Угловая{% else %}Круговая {% endif %}
+          <li><p>Объект пожара: {{ calc.object_type }}</p></li>
+          <li><p>Описание пожара: {{ calc.description }}</p></li>
+          <li><p>Площадь пожара за первые 10 минут: {{ calc.squere_first_ten }}</p></li>
+          <li><p> Площадь пожара за все время: {{ calc.squere }} м2</p></li>
+          <li><p> Периметр пожара за все время: {{ calc.perimeter }} м</p></li>
+          <li><p> Фронт пожара за все время: {{ calc.front }} м</p></li>
+          <li><p> Скорость роста площади пожара: {{ calc.speed_of_squere }} м2 в минуту</p></li>
+          <li><p> Линейная скорость роста периметра пожара: {{ calc.line_speed }} м в минуту</p></li>
+          <li><p> Скорость роста фронта пожара: {{ calc.front_speed }} м в минуту</p></li>
+        </ul>
+      </div>
+      {% if not forloop.last %}
+        <hr>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% load static %}
+
+<header>
+  <nav class="navbar shadow">
+    <div class="container">
+      {% with request.resolver_match.view_name as view_name %}
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'homepage:homepage' %} active {% endif %}"
+              href="{% url 'homepage:homepage' %}">
+              Главная
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'fire:fire_form' %} active {% endif %}"
+              href="{% url 'fire:fire_form' %}">
+              Калькулятор пожара
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'fire:fire_list' %} active {% endif %}"
+              href="{% url 'fire:fire_list' %}">
+              Список пожаров
+            </a>
+          </li>
+        </ul>
+      {% endwith %}
+      <a class="navbar-brand" href="{% url 'homepage:homepage' %}">
+      <img src="{% static 'img/logotip.png' %}" height="50" class="d-inline-block align-top" alt="">            
+      </a>
+    </div>      
+  </nav>
+</header>
